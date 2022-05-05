@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background-color: #333;
+  }
+  
+  .container {
+    background-color: #333;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .death {
+    height: 10rem;
+    width: 10rem;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .draggable {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: move;
+  }
+  
+  .draggable.dragging {
+    opacity: .5;
+  }
+
+  .card {
+    width: 12rem;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Raleway');
+  
+  * {
+      font-family: Raleway;
+  }
