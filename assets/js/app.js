@@ -1,3 +1,27 @@
+var test = window.location.href;
+console.log(test);
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        info:'',
+        character1:'',
+        character2:'',
+        character3:'',
+        randomNB:'',
+        
+    },
+    methods: {
+   
+    },
+    mounted () {
+        axios
+          .get('https://rickandmortyapi.com/api/character/')
+          .then(response => (this.info = response['data']['results'],this.randomNB = Math.random() * 825, this.character1 = this.info[1]));
+             
+      }
+  })
+
 const draggables = document.querySelectorAll('.draggable')
 const containers = document.querySelectorAll('.container')
 
@@ -25,12 +49,20 @@ containers.forEach(container => {
 })
 
 function getDragAfterElement(container, y) {
+  
+  
+  
   const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
 
   return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect()
     const offset = y - box.top - box.height / 2
     if (offset < 0 && offset > closest.offset) {
+      
+      
+      
+      
+      
       return { offset: offset, element: child }
     } else {
       return closest
