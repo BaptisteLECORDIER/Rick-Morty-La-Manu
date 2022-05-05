@@ -12,14 +12,18 @@ var app = new Vue({
         
     },
     methods: {
-   
+      random () {
+        return parseInt(Math.random() * 825)
+      }
     },
     mounted () {
         axios
           .get('https://rickandmortyapi.com/api/character/')
-          .then(response => (this.info = response['data']['results'],this.randomNB = Math.random() * 825, this.character1 = this.info[1]));
+          .then(response => (this.info = response['data']['results'], this.character1 = this.info[parseInt(random())]));
              
-      }
+      },
+
+
   })
 
 const draggables = document.querySelectorAll('.draggable')
